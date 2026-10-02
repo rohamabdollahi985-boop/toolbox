@@ -1,0 +1,2712 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toolbox</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Vazirmatn",sans-serif;
+    background:#bfc1c4;
+    color:#202124;
+    min-height:100vh;
+}
+
+button,input,textarea,select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+/* LOGIN */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-card{
+    width:100%;
+    max-width:430px;
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.logo{
+    text-align:center;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.login-subtitle{
+    text-align:center;
+    color:#666;
+    font-size:13px;
+    margin-bottom:28px;
+}
+
+.input-group{
+    margin-bottom:14px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:7px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.input-group input{
+    width:100%;
+    height:50px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#f1f1f1;
+    padding:0 15px;
+    font-size:14px;
+}
+
+.password-input{
+    padding-left:48px !important;
+}
+
+.eye-button{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:transparent;
+    font-size:18px;
+}
+
+.login-button{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:15px;
+    background:#252629;
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    margin-top:8px;
+}
+
+/* MAIN */
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+header{
+    padding:22px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.header-logo{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.header-user{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.user-name{
+    background:rgba(255,255,255,.6);
+    padding:9px 15px;
+    border-radius:14px;
+    font-size:13px;
+}
+
+.logout{
+    border:none;
+    background:#252629;
+    color:white;
+    padding:9px 14px;
+    border-radius:13px;
+    font-size:12px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:430px;
+    background:#252629;
+    color:white;
+    border-radius:32px;
+    padding:65px 35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.13);
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,72px);
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#aaa;
+}
+
+.hero p{
+    color:#bdbdbd;
+    line-height:2;
+    font-size:15px;
+    max-width:600px;
+    margin:auto;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.glass-btn{
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.1);
+    color:inherit;
+    padding:13px 21px;
+    border-radius:15px;
+    transition:.2s;
+}
+
+.glass-btn:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.17);
+}
+
+/* SECTIONS */
+
+.section{
+    margin-top:25px;
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(255,255,255,.65);
+    backdrop-filter:blur(15px);
+    border-radius:28px;
+    padding:28px;
+}
+
+.section h2{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#777;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+/* QUICK */
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.quick-card{
+    background:rgba(255,255,255,.75);
+    border-radius:20px;
+    padding:22px 15px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    border:1px solid rgba(255,255,255,.7);
+}
+
+.quick-card:hover{
+    transform:translateY(-4px);
+}
+
+.quick-icon{
+    font-size:28px;
+    margin-bottom:9px;
+}
+
+.quick-card h3{
+    font-size:14px;
+}
+
+.quick-card p{
+    color:#777;
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* STATS */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat-card{
+    background:#252629;
+    color:white;
+    border-radius:20px;
+    padding:22px;
+}
+
+.stat-title{
+    color:#aaa;
+    font-size:12px;
+}
+
+.stat-value{
+    font-size:24px;
+    font-weight:800;
+    margin-top:7px;
+}
+
+/* RANKING */
+
+.rank-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:16px;
+    background:#f1f1f1;
+    border-radius:17px;
+}
+
+.rank-number{
+    font-weight:800;
+    font-size:18px;
+}
+
+.rank-name{
+    flex:1;
+    font-weight:700;
+}
+
+.rank-time{
+    color:#777;
+    font-size:12px;
+}
+
+/* STUDY */
+
+.study-page{
+    min-height:100vh;
+    padding:20px 0 50px;
+}
+
+.back-button{
+    border:none;
+    background:#252629;
+    color:white;
+    padding:11px 17px;
+    border-radius:14px;
+    margin-bottom:20px;
+}
+
+.study-card{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,.75);
+    border-radius:30px;
+    padding:30px;
+    text-align:center;
+}
+
+.study-inputs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+/* کادرهای جدید بخش مطالعه */
+
+.study-field{
+    text-align:right;
+    background:rgba(255,255,255,.8);
+    border:1.5px solid #d2d3d5;
+    border-radius:18px;
+    padding:13px;
+    transition:.2s;
+}
+
+.study-field:focus-within{
+    border-color:#252629;
+    box-shadow:0 0 0 3px rgba(37,38,41,.08);
+}
+
+.study-field label{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:12px;
+    font-weight:700;
+    color:#555;
+    margin-bottom:8px;
+}
+
+.study-field input{
+    width:100%;
+    height:42px;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#222;
+    font-size:14px;
+    padding:0 2px;
+}
+
+.study-field input::placeholder{
+    color:#999;
+}
+
+.study-field input[type="number"]{
+    direction:rtl;
+}
+
+.timer-circle{
+    width:250px;
+    height:250px;
+    margin:20px auto;
+    border-radius:50%;
+    background:conic-gradient(
+        #252629 var(--progress,0deg),
+        #ddd var(--progress,0deg)
+    );
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.timer-inner{
+    width:215px;
+    height:215px;
+    border-radius:50%;
+    background:#f5f5f5;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.study-timer{
+    font-size:32px;
+    font-weight:800;
+    direction:ltr;
+}
+
+.progress-text{
+    font-size:11px;
+    color:#777;
+    margin-top:7px;
+}
+
+.study-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.study-button{
+    border:none;
+    padding:12px 20px;
+    border-radius:14px;
+    background:#252629;
+    color:white;
+}
+
+.study-button:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.study-status{
+    margin-top:17px;
+    color:#777;
+    font-size:13px;
+}
+
+/* TOOLS */
+
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.tool-card{
+    background:#252629;
+    color:white;
+    border-radius:24px;
+    padding:23px;
+}
+
+.tool-card h3{
+    margin-bottom:6px;
+}
+
+.tool-card p{
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.tool-input,
+.tool-select{
+    width:100%;
+    height:45px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#35363a;
+    color:white;
+    padding:0 12px;
+    margin-bottom:10px;
+}
+
+.tool-action{
+    width:100%;
+    border:none;
+    background:#f1f1f1;
+    color:#222;
+    height:44px;
+    border-radius:12px;
+    font-weight:700;
+}
+
+.tool-result{
+    margin-top:12px;
+    background:#35363a;
+    border-radius:12px;
+    padding:13px;
+    min-height:45px;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* CALCULATOR */
+
+.calculator{
+    max-width:360px;
+    margin:auto;
+    background:#1d1e20;
+    padding:17px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+.calc-display{
+    background:#101112;
+    color:white;
+    min-height:85px;
+    border-radius:17px;
+    padding:12px 15px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+    font-size:32px;
+    overflow:hidden;
+    direction:ltr;
+    margin-bottom:13px;
+}
+
+.calc-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:9px;
+}
+
+.calc-btn{
+    height:58px;
+    border:none;
+    border-radius:15px;
+    background:#333438;
+    color:white;
+    font-size:18px;
+}
+
+.calc-btn:hover{
+    background:#44454a;
+}
+
+.calc-btn.operator{
+    background:#55565a;
+}
+
+.calc-btn.equal{
+    background:#eee;
+    color:#222;
+}
+
+.calc-btn.danger{
+    background:#444;
+}
+
+/* GEOMETRY */
+
+.geometry-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+/* TIMER */
+
+.timer-tool{
+    text-align:center;
+}
+
+.big-timer{
+    font-size:45px;
+    font-weight:800;
+    direction:ltr;
+    margin:15px 0;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px 10px;
+    color:#666;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .quick-grid,
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .tools-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .container{
+        width:94%;
+    }
+
+    header{
+        align-items:flex-start;
+    }
+
+    .header-user{
+        flex-direction:column;
+        align-items:flex-end;
+    }
+
+    .hero{
+        min-height:390px;
+        padding:45px 20px;
+        border-radius:25px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .section{
+        padding:20px;
+        border-radius:23px;
+    }
+
+    .study-inputs{
+        grid-template-columns:1fr;
+    }
+
+    .timer-circle{
+        width:220px;
+        height:220px;
+    }
+
+    .timer-inner{
+        width:190px;
+        height:190px;
+    }
+
+    .quick-grid,
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .geometry-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div class="login-page" id="loginPage">
+
+    <div class="login-card">
+
+        <div class="logo">TOOLBOX</div>
+
+        <div class="login-subtitle">
+            ابزارهای کاربردی برای دانش‌آموزها
+        </div>
+
+        <div class="input-group">
+            <label>نام کاربری</label>
+            <input id="username" type="text" placeholder="مثلاً roham">
+        </div>
+
+        <div class="input-group">
+            <label>ایمیل</label>
+            <input id="email" type="email" placeholder="example@gmail.com">
+        </div>
+
+        <div class="input-group">
+            <label>رمز عبور</label>
+
+            <div class="input-wrap">
+
+                <input
+                    id="password"
+                    class="password-input"
+                    type="password"
+                    placeholder="حداقل ۶ کاراکتر"
+                >
+
+                <button
+                    class="eye-button"
+                    id="eyeButton"
+                    onclick="togglePassword()"
+                >👁️</button>
+
+            </div>
+        </div>
+
+        <button class="login-button" onclick="login()">
+            ورود به Toolbox
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- HOME -->
+
+<div class="page" id="homePage">
+
+    <div class="container">
+
+        <header>
+
+            <div class="header-logo">
+                TOOLBOX
+            </div>
+
+            <div class="header-user">
+
+                <div class="user-name">
+                    👤 <span id="userNameRank">کاربر</span>
+                </div>
+
+                <button class="logout" onclick="logout()">
+                    خروج
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    <span>Tool</span>box
+                </h1>
+
+                <p>
+                    مجموعه‌ای از ابزارهای کاربردی برای مطالعه،
+                    محاسبات و مدیریت بهتر زمان.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="glass-btn"
+                        onclick="openStudyPage()"
+                    >
+                        📚 شروع مطالعه
+                    </button>
+
+                    <button
+                        class="glass-btn"
+                        onclick="scrollToSection('tools')"
+                    >
+                        🧰 مشاهده ابزارها
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK -->
+
+        <section class="section">
+
+            <h2>⚡ دسترسی سریع</h2>
+
+            <p class="section-subtitle">
+                ابزارهایی که بیشتر به آن‌ها نیاز داری
+            </p>
+
+            <div class="quick-grid">
+
+                <div
+                    class="quick-card"
+                    onclick="openStudyPage()"
+                >
+                    <div class="quick-icon">📚</div>
+                    <h3>مطالعه</h3>
+                    <p>ثبت زمان مطالعه</p>
+                </div>
+
+                <div
+                    class="quick-card"
+                    onclick="scrollToSection('calculator')"
+                >
+                    <div class="quick-icon">🧮</div>
+                    <h3>ماشین حساب</h3>
+                    <p>محاسبات سریع</p>
+                </div>
+
+                <div
+                    class="quick-card"
+                    onclick="scrollToSection('tools')"
+                >
+                    <div class="quick-icon">📐</div>
+                    <h3>هندسه</h3>
+                    <p>مساحت و محیط</p>
+                </div>
+
+                <div
+                    class="quick-card"
+                    onclick="scrollToSection('tools')"
+                >
+                    <div class="quick-icon">📊</div>
+                    <h3>معدل</h3>
+                    <p>محاسبه معدل</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section class="section">
+
+            <h2>📈 آمار مطالعه</h2>
+
+            <p class="section-subtitle">
+                پیشرفت مطالعه‌ات را اینجا ببین
+            </p>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-title">امروز</div>
+                    <div class="stat-value" id="todayStat">
+                        ۰ دقیقه
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">این هفته</div>
+                    <div class="stat-value" id="weekStat">
+                        ۰ ساعت
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">میانگین جلسه</div>
+                    <div class="stat-value" id="averageStat">
+                        ۰ دقیقه
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">جلسات</div>
+                    <div class="stat-value" id="sessionsStat">
+                        ۰
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RANKING -->
+
+        <section class="section">
+
+            <h2>🏆 رتبه‌بندی</h2>
+
+            <p class="section-subtitle">
+                رکورد مطالعه خودت را دنبال کن
+            </p>
+
+            <div class="rank-row">
+
+                <div class="rank-number">
+                    #1
+                </div>
+
+                <div class="rank-name">
+                    <span id="userNameRank2">کاربر</span>
+                </div>
+
+                <div
+                    class="rank-time"
+                    id="userRankTime"
+                >
+                    ۰ ساعت
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOOLS -->
+
+        <section class="section" id="tools">
+
+            <h2>🧰 ابزارهای Toolbox</h2>
+
+            <p class="section-subtitle">
+                ابزارهای کاربردی بدون نیاز به اینترنت
+            </p>
+
+            <div class="tools-grid">
+
+
+                <!-- CALCULATOR -->
+
+                <div class="tool-card" id="calculator">
+
+                    <h3>🧮 ماشین حساب</h3>
+
+                    <p>
+                        محاسبات روزمره و سریع
+                    </p>
+
+                    <div class="calculator">
+
+                        <div
+                            class="calc-display"
+                            id="calcDisplay"
+                        >
+                            0
+                        </div>
+
+                        <div class="calc-grid">
+
+                            <button
+                                class="calc-btn danger"
+                                onclick="clearCalc()"
+                            >AC</button>
+
+                            <button
+                                class="calc-btn danger"
+                                onclick="deleteLast()"
+                            >⌫</button>
+
+                            <button
+                                class="calc-btn operator"
+                                onclick="percent()"
+                            >%</button>
+
+                            <button
+                                class="calc-btn operator"
+                                onclick="operator('/')"
+                            >÷</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('7')"
+                            >7</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('8')"
+                            >8</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('9')"
+                            >9</button>
+
+                            <button
+                                class="calc-btn operator"
+                                onclick="operator('*')"
+                            >×</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('4')"
+                            >4</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('5')"
+                            >5</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('6')"
+                            >6</button>
+
+                            <button
+                                class="calc-btn operator"
+                                onclick="operator('-')"
+                            >−</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('1')"
+                            >1</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('2')"
+                            >2</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('3')"
+                            >3</button>
+
+                            <button
+                                class="calc-btn operator"
+                                onclick="operator('+')"
+                            >+</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="number('0')"
+                            >0</button>
+
+                            <button
+                                class="calc-btn"
+                                onclick="decimal()"
+                            >.</button>
+
+                            <button
+                                class="calc-btn equal"
+                                style="grid-column:span 2"
+                                onclick="calculate()"
+                            >=</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GEOMETRY -->
+
+                <div class="tool-card">
+
+                    <h3>📐 محاسبه‌گر هندسه</h3>
+
+                    <p>
+                        مساحت و محیط شکل‌های ساده
+                    </p>
+
+                    <select
+                        class="tool-select"
+                        id="shape"
+                        onchange="changeShape()"
+                    >
+
+                        <option value="square">مربع</option>
+                        <option value="rectangle">مستطیل</option>
+                        <option value="circle">دایره</option>
+                        <option value="triangle">مثلث</option>
+
+                    </select>
+
+                    <div id="geometryInputs">
+
+                        <input
+                            class="tool-input"
+                            id="geoA"
+                            type="number"
+                            placeholder="ضلع"
+                        >
+
+                    </div>
+
+                    <button
+                        class="tool-action"
+                        onclick="calculateGeometry()"
+                    >
+                        محاسبه
+                    </button>
+
+                    <div
+                        class="tool-result"
+                        id="geometryResult"
+                    >
+                        نتیجه اینجا نمایش داده می‌شود
+                    </div>
+
+                </div>
+
+
+                <!-- UNIT -->
+
+                <div class="tool-card">
+
+                    <h3>🔢 تبدیل واحد</h3>
+
+                    <p>
+                        تبدیل واحدهای پرکاربرد
+                    </p>
+
+                    <input
+                        class="tool-input"
+                        id="unitValue"
+                        type="number"
+                        placeholder="مقدار"
+                    >
+
+                    <select
+                        class="tool-select"
+                        id="unitType"
+                    >
+
+                        <option value="km-m">کیلومتر → متر</option>
+                        <option value="m-km">متر → کیلومتر</option>
+                        <option value="m-cm">متر → سانتی‌متر</option>
+                        <option value="cm-m">سانتی‌متر → متر</option>
+                        <option value="kg-g">کیلوگرم → گرم</option>
+                        <option value="g-kg">گرم → کیلوگرم</option>
+                        <option value="l-ml">لیتر → میلی‌لیتر</option>
+                        <option value="ml-l">میلی‌لیتر → لیتر</option>
+
+                    </select>
+
+                    <button
+                        class="tool-action"
+                        onclick="convertUnit()"
+                    >
+                        تبدیل
+                    </button>
+
+                    <div
+                        class="tool-result"
+                        id="unitResult"
+                    >
+                        نتیجه اینجا نمایش داده می‌شود
+                    </div>
+
+                </div>
+
+
+                <!-- STOPWATCH -->
+
+                <div class="tool-card timer-tool">
+
+                    <h3>⏱️ تایمر و کرنومتر</h3>
+
+                    <p>
+                        برای مطالعه یا کارهای روزمره
+                    </p>
+
+                    <div
+                        class="big-timer"
+                        id="stopwatch"
+                    >
+                        00:00:00
+                    </div>
+
+                    <div class="study-buttons">
+
+                        <button
+                            class="study-button"
+                            onclick="startStopwatch()"
+                        >
+                            شروع
+                        </button>
+
+                        <button
+                            class="study-button"
+                            onclick="pauseStopwatch()"
+                        >
+                            توقف
+                        </button>
+
+                        <button
+                            class="study-button"
+                            onclick="resetStopwatch()"
+                        >
+                            ریست
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AVERAGE -->
+
+                <div class="tool-card">
+
+                    <h3>📊 محاسبه‌گر معدل</h3>
+
+                    <p>
+                        نمره‌ها را وارد کن و معدل را ببین
+                    </p>
+
+                    <textarea
+                        class="tool-input"
+                        id="grades"
+                        style="height:90px;padding-top:12px;resize:vertical"
+                        placeholder="مثلاً: 18, 17.5, 20, 16"
+                    ></textarea>
+
+                    <button
+                        class="tool-action"
+                        onclick="calculateAverage()"
+                    >
+                        محاسبه معدل
+                    </button>
+
+                    <div
+                        class="tool-result"
+                        id="averageResult"
+                    >
+                        نتیجه اینجا نمایش داده می‌شود
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            © 2026 Toolbox — ساخته شده برای مطالعه بهتر
+        </footer>
+
+    </div>
+
+</div>
+
+
+<!-- STUDY PAGE -->
+
+<div class="page study-page" id="studyPage">
+
+    <div class="container">
+
+        <button
+            class="back-button"
+            onclick="closeStudyPage()"
+        >
+            ← بازگشت
+        </button>
+
+        <div class="study-card">
+
+            <h2>📚 مطالعه</h2>
+
+            <p class="section-subtitle">
+                زمان مطالعه‌ات را ثبت کن
+            </p>
+
+
+            <!-- STUDY INPUTS -->
+
+            <div class="study-inputs">
+
+                <div class="study-field">
+
+                    <label for="studySubject">
+                        📖 موضوع مطالعه
+                    </label>
+
+                    <input
+                        id="studySubject"
+                        type="text"
+                        placeholder="مثلاً ریاضی، فیزیک یا زبان"
+                    >
+
+                </div>
+
+
+                <div class="study-field">
+
+                    <label for="studyGoal">
+                        🎯 هدف مطالعه
+                    </label>
+
+                    <input
+                        id="studyGoal"
+                        type="number"
+                        min="0.1"
+                        step="0.1"
+                        value="3"
+                        placeholder="تعداد ساعت"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="timer-circle"
+                id="timerCircle"
+                style="--progress:0deg"
+            >
+
+                <div class="timer-inner">
+
+                    <div
+                        class="study-timer"
+                        id="studyTimer"
+                    >
+                        00:00:00
+                    </div>
+
+                    <div
+                        class="progress-text"
+                        id="progressText"
+                    >
+                        0% از هدف مطالعه تکمیل شده
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="progress-text"
+                style="margin-bottom:15px"
+            >
+                هدف:
+                <span id="goalText">
+                    3 ساعت
+                </span>
+            </div>
+
+
+            <div class="study-buttons">
+
+                <button
+                    class="study-button"
+                    id="startStudyBtn"
+                    onclick="startStudy()"
+                >
+                    ▶ شروع
+                </button>
+
+                <button
+                    class="study-button"
+                    id="pauseStudyBtn"
+                    onclick="pauseStudy()"
+                    disabled
+                >
+                    ⏸ توقف
+                </button>
+
+                <button
+                    class="study-button"
+                    onclick="finishStudy()"
+                >
+                    ✓ پایان و ثبت
+                </button>
+
+            </div>
+
+
+            <div
+                class="study-status"
+                id="studyStatus"
+            >
+                هنوز مطالعه‌ای شروع نشده.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* LOGIN */
+
+function togglePassword(){
+
+    const password=
+        document.getElementById("password");
+
+    const eye=
+        document.getElementById("eyeButton");
+
+    if(password.type==="password"){
+
+        password.type="text";
+        eye.textContent="🙈";
+
+    }else{
+
+        password.type="password";
+        eye.textContent="👁️";
+
+    }
+
+}
+
+
+function login(){
+
+    const username=
+        document.getElementById("username")
+        .value.trim();
+
+    const email=
+        document.getElementById("email")
+        .value.trim();
+
+    const password=
+        document.getElementById("password")
+        .value;
+
+    if(username.length<2){
+
+        alert("نام کاربری را وارد کن.");
+        return;
+
+    }
+
+    if(!email.includes("@")){
+
+        alert("ایمیل معتبر وارد کن.");
+        return;
+
+    }
+
+    if(password.length<6){
+
+        alert(
+            "رمز عبور باید حداقل ۶ کاراکتر باشد."
+        );
+
+        return;
+
+    }
+
+    localStorage.setItem(
+        "toolboxUsername",
+        username
+    );
+
+    localStorage.setItem(
+        "toolboxEmail",
+        email
+    );
+
+    document.getElementById(
+        "loginPage"
+    ).style.display="none";
+
+    document
+        .getElementById("homePage")
+        .classList.add("active");
+
+    document
+        .getElementById("userNameRank")
+        .textContent=username;
+
+    document
+        .getElementById("userNameRank2")
+        .textContent=username;
+
+}
+
+
+function logout(){
+
+    localStorage.removeItem(
+        "toolboxUsername"
+    );
+
+    localStorage.removeItem(
+        "toolboxEmail"
+    );
+
+    location.reload();
+
+}
+
+
+/* NAVIGATION */
+
+function scrollToSection(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* STUDY */
+
+let studySeconds=0;
+let studyInterval=null;
+let studyRunning=false;
+
+
+function openStudyPage(){
+
+    document
+        .getElementById("homePage")
+        .classList.remove("active");
+
+    document
+        .getElementById("studyPage")
+        .classList.add("active");
+
+    window.scrollTo(0,0);
+
+    updateGoal();
+
+}
+
+
+function closeStudyPage(){
+
+    if(studyRunning){
+
+        const leave=confirm(
+            "تایمر در حال اجراست. می‌خواهی بدون ثبت جلسه برگردی؟"
+        );
+
+        if(!leave)return;
+
+        clearInterval(studyInterval);
+
+        studyRunning=false;
+
+    }
+
+    document
+        .getElementById("studyPage")
+        .classList.remove("active");
+
+    document
+        .getElementById("homePage")
+        .classList.add("active");
+
+    window.scrollTo(0,0);
+
+}
+
+
+function formatTime(seconds){
+
+    const h=
+        Math.floor(seconds/3600);
+
+    const m=
+        Math.floor((seconds%3600)/60);
+
+    const s=
+        seconds%60;
+
+    return String(h).padStart(2,"0")
+        +":"
+        +String(m).padStart(2,"0")
+        +":"
+        +String(s).padStart(2,"0");
+
+}
+
+
+function updateTimer(){
+
+    document
+        .getElementById("studyTimer")
+        .textContent=
+        formatTime(studySeconds);
+
+    const goalHours=
+        parseFloat(
+            document.getElementById(
+                "studyGoal"
+            ).value
+        )||0;
+
+    const goalSeconds=
+        goalHours*3600;
+
+    let progress=0;
+
+    if(goalSeconds>0){
+
+        progress=
+            Math.min(
+                studySeconds/
+                goalSeconds,
+                1
+            );
+
+    }
+
+    document
+        .getElementById("timerCircle")
+        .style
+        .setProperty(
+            "--progress",
+            (progress*360)+"deg"
+        );
+
+    if(goalSeconds>0){
+
+        const percent=
+            Math.min(
+                Math.floor(
+                    (studySeconds/
+                    goalSeconds)*100
+                ),
+                100
+            );
+
+        document
+            .getElementById(
+                "progressText"
+            )
+            .textContent=
+            percent+
+            "% از هدف مطالعه تکمیل شده";
+
+    }
+
+}
+
+
+function updateGoal(){
+
+    const goal=
+        parseFloat(
+            document.getElementById(
+                "studyGoal"
+            ).value
+        )||0;
+
+    document
+        .getElementById("goalText")
+        .textContent=
+        goal+" ساعت";
+
+    updateTimer();
+
+}
+
+
+function startStudy(){
+
+    if(studyRunning)return;
+
+    const subject=
+        document.getElementById(
+            "studySubject"
+        ).value.trim();
+
+    if(subject.length<2){
+
+        alert(
+            "اول موضوع مطالعه را وارد کن."
+        );
+
+        document
+            .getElementById(
+                "studySubject"
+            )
+            .focus();
+
+        return;
+
+    }
+
+    studyRunning=true;
+
+    document
+        .getElementById(
+            "startStudyBtn"
+        )
+        .disabled=true;
+
+    document
+        .getElementById(
+            "pauseStudyBtn"
+        )
+        .disabled=false;
+
+    document
+        .getElementById(
+            "studyStatus"
+        )
+        .textContent=
+        "در حال مطالعه: "+subject;
+
+    studyInterval=
+        setInterval(function(){
+
+            studySeconds++;
+
+            updateTimer();
+
+        },1000);
+
+}
+
+
+function pauseStudy(){
+
+    if(!studyRunning)return;
+
+    clearInterval(studyInterval);
+
+    studyRunning=false;
+
+    document
+        .getElementById(
+            "startStudyBtn"
+        )
+        .disabled=false;
+
+    document
+        .getElementById(
+            "pauseStudyBtn"
+        )
+        .disabled=true;
+
+    document
+        .getElementById(
+            "studyStatus"
+        )
+        .textContent=
+        "مطالعه متوقف شده است.";
+
+}
+
+
+function finishStudy(){
+
+    if(studySeconds<=0){
+
+        alert(
+            "هنوز زمانی برای ثبت جلسه مطالعه نشده."
+        );
+
+        return;
+
+    }
+
+    clearInterval(studyInterval);
+
+    studyRunning=false;
+
+    const subject=
+        document
+        .getElementById(
+            "studySubject"
+        )
+        .value.trim()
+        ||
+        "مطالعه";
+
+    const sessions=
+        JSON.parse(
+            localStorage.getItem(
+                "toolboxStudySessions"
+            )||"[]"
+        );
+
+    sessions.push({
+
+        subject:subject,
+        seconds:studySeconds,
+        date:new Date().toISOString()
+
+    });
+
+    localStorage.setItem(
+        "toolboxStudySessions",
+        JSON.stringify(sessions)
+    );
+
+    alert(
+        "جلسه مطالعه با موفقیت ثبت شد ✅\n\n"+
+        "موضوع: "+subject+
+        "\nزمان: "+
+        formatTime(studySeconds)
+    );
+
+    studySeconds=0;
+
+    document
+        .getElementById(
+            "studySubject"
+        )
+        .value="";
+
+    document
+        .getElementById(
+            "startStudyBtn"
+        )
+        .disabled=false;
+
+    document
+        .getElementById(
+            "pauseStudyBtn"
+        )
+        .disabled=true;
+
+    document
+        .getElementById(
+            "studyStatus"
+        )
+        .textContent=
+        "جلسه ثبت شد. برای مطالعه بعدی آماده‌ای.";
+
+    updateTimer();
+
+    updateStats();
+
+}
+
+
+document
+    .getElementById("studyGoal")
+    .addEventListener(
+        "input",
+        updateGoal
+    );
+
+
+/* STATS */
+
+function getSessions(){
+
+    return JSON.parse(
+        localStorage.getItem(
+            "toolboxStudySessions"
+        )||"[]"
+    );
+
+}
+
+
+function isToday(date){
+
+    const d=new Date(date);
+    const now=new Date();
+
+    return d.getFullYear()===
+        now.getFullYear()
+        &&
+        d.getMonth()===
+        now.getMonth()
+        &&
+        d.getDate()===
+        now.getDate();
+
+}
+
+
+function isThisWeek(date){
+
+    const d=new Date(date);
+    const now=new Date();
+
+    const day=now.getDay();
+
+    const diff=
+        day===0?6:day-1;
+
+    const monday=new Date(now);
+
+    monday.setHours(
+        0,0,0,0
+    );
+
+    monday.setDate(
+        now.getDate()-diff
+    );
+
+    return d>=monday;
+
+}
+
+
+function updateStats(){
+
+    const sessions=getSessions();
+
+    let todaySeconds=0;
+    let weekSeconds=0;
+    let totalSeconds=0;
+
+    sessions.forEach(session=>{
+
+        const seconds=
+            Number(session.seconds)||0;
+
+        totalSeconds+=seconds;
+
+        if(isToday(session.date))
+            todaySeconds+=seconds;
+
+        if(isThisWeek(session.date))
+            weekSeconds+=seconds;
+
+    });
+
+    const todayMinutes=
+        Math.floor(
+            todaySeconds/60
+        );
+
+    const weekHours=
+        (weekSeconds/3600)
+        .toFixed(1);
+
+    const average=
+        sessions.length
+        ?
+        Math.floor(
+            totalSeconds/
+            sessions.length/
+            60
+        )
+        :
+        0;
+
+    document
+        .getElementById(
+            "todayStat"
+        )
+        .textContent=
+        todayMinutes+" دقیقه";
+
+    document
+        .getElementById(
+            "weekStat"
+        )
+        .textContent=
+        weekHours+" ساعت";
+
+    document
+        .getElementById(
+            "averageStat"
+        )
+        .textContent=
+        average+" دقیقه";
+
+    document
+        .getElementById(
+            "sessionsStat"
+        )
+        .textContent=
+        sessions.length;
+
+    document
+        .getElementById(
+            "userRankTime"
+        )
+        .textContent=
+        (totalSeconds/3600)
+        .toFixed(1)
+        +" ساعت";
+
+}
+
+
+/* CALCULATOR */
+
+let current="0";
+let previous=null;
+let currentOperator=null;
+let shouldReset=false;
+
+
+function updateCalcDisplay(){
+
+    document
+        .getElementById(
+            "calcDisplay"
+        )
+        .textContent=current;
+
+}
+
+
+function number(value){
+
+    if(
+        current==="0" ||
+        shouldReset
+    ){
+
+        current=value;
+        shouldReset=false;
+
+    }else{
+
+        current+=value;
+
+    }
+
+    updateCalcDisplay();
+
+}
+
+
+function decimal(){
+
+    if(shouldReset){
+
+        current="0.";
+        shouldReset=false;
+
+        updateCalcDisplay();
+
+        return;
+
+    }
+
+    if(!current.includes(".")){
+
+        current+=".";
+
+        updateCalcDisplay();
+
+    }
+
+}
+
+
+function operator(op){
+
+    if(
+        currentOperator &&
+        !shouldReset
+    ){
+
+        calculate();
+
+    }
+
+    previous=
+        parseFloat(current);
+
+    currentOperator=op;
+
+    shouldReset=true;
+
+}
+
+
+function calculate(){
+
+    if(
+        previous===null ||
+        !currentOperator
+    )return;
+
+    const currentNumber=
+        parseFloat(current);
+
+    let result;
+
+    if(currentOperator==="+")
+        result=
+            previous+currentNumber;
+
+    if(currentOperator==="-")
+        result=
+            previous-currentNumber;
+
+    if(currentOperator==="*")
+        result=
+            previous*currentNumber;
+
+    if(currentOperator==="/"){
+
+        if(currentNumber===0){
+
+            current="خطا";
+            previous=null;
+            currentOperator=null;
+            shouldReset=true;
+
+            updateCalcDisplay();
+
+            return;
+
+        }
+
+        result=
+            previous/currentNumber;
+
+    }
+
+    current=
+        String(
+            Number(
+                result.toFixed(10)
+            )
+        );
+
+    previous=null;
+    currentOperator=null;
+    shouldReset=true;
+
+    updateCalcDisplay();
+
+}
+
+
+function clearCalc(){
+
+    current="0";
+    previous=null;
+    currentOperator=null;
+    shouldReset=false;
+
+    updateCalcDisplay();
+
+}
+
+
+function deleteLast(){
+
+    if(
+        current.length<=1 ||
+        current==="خطا"
+    ){
+
+        current="0";
+
+    }else{
+
+        current=
+            current.slice(0,-1);
+
+    }
+
+    updateCalcDisplay();
+
+}
+
+
+function percent(){
+
+    const value=
+        parseFloat(current);
+
+    if(!isNaN(value)){
+
+        current=
+            String(value/100);
+
+        updateCalcDisplay();
+
+    }
+
+}
+
+
+/* GEOMETRY */
+
+function changeShape(){
+
+    const shape=
+        document
+        .getElementById("shape")
+        .value;
+
+    const box=
+        document
+        .getElementById(
+            "geometryInputs"
+        );
+
+    if(shape==="square"){
+
+        box.innerHTML=`
+            <input
+                class="tool-input"
+                id="geoA"
+                type="number"
+                placeholder="ضلع"
+            >
+        `;
+
+    }
+
+    if(shape==="rectangle"){
+
+        box.innerHTML=`
+            <input
+                class="tool-input"
+                id="geoA"
+                type="number"
+                placeholder="طول"
+            >
+
+            <input
+                class="tool-input"
+                id="geoB"
+                type="number"
+                placeholder="عرض"
+            >
+        `;
+
+    }
+
+    if(shape==="circle"){
+
+        box.innerHTML=`
+            <input
+                class="tool-input"
+                id="geoA"
+                type="number"
+                placeholder="شعاع"
+            >
+        `;
+
+    }
+
+    if(shape==="triangle"){
+
+        box.innerHTML=`
+            <input
+                class="tool-input"
+                id="geoA"
+                type="number"
+                placeholder="قاعده"
+            >
+
+            <input
+                class="tool-input"
+                id="geoB"
+                type="number"
+                placeholder="ارتفاع"
+            >
+        `;
+
+    }
+
+}
+
+
+function calculateGeometry(){
+
+    const shape=
+        document
+        .getElementById("shape")
+        .value;
+
+    const a=
+        parseFloat(
+            document
+            .getElementById("geoA")
+            .value
+        );
+
+    const result=
+        document
+        .getElementById(
+            "geometryResult"
+        );
+
+    if(
+        isNaN(a) ||
+        a<=0
+    ){
+
+        result.textContent=
+            "لطفاً مقدار معتبر وارد کن.";
+
+        return;
+
+    }
+
+
+    if(shape==="square"){
+
+        const area=a*a;
+        const perimeter=4*a;
+
+        result.innerHTML=
+            "مساحت: "+area+
+            "<br>محیط: "+perimeter;
+
+    }
+
+
+    if(shape==="rectangle"){
+
+        const b=
+            parseFloat(
+                document
+                .getElementById("geoB")
+                .value
+            );
+
+        if(
+            isNaN(b) ||
+            b<=0
+        ){
+
+            result.textContent=
+                "عرض را هم وارد کن.";
+
+            return;
+
+        }
+
+        const area=a*b;
+        const perimeter=
+            2*(a+b);
+
+        result.innerHTML=
+            "مساحت: "+area+
+            "<br>محیط: "+perimeter;
+
+    }
+
+
+    if(shape==="circle"){
+
+        const area=
+            Math.PI*a*a;
+
+        const perimeter=
+            2*Math.PI*a;
+
+        result.innerHTML=
+            "مساحت: "+
+            area.toFixed(2)+
+            "<br>محیط: "+
+            perimeter.toFixed(2);
+
+    }
+
+
+    if(shape==="triangle"){
+
+        const b=
+            parseFloat(
+                document
+                .getElementById("geoB")
+                .value
+            );
+
+        if(
+            isNaN(b) ||
+            b<=0
+        ){
+
+            result.textContent=
+                "ارتفاع را هم وارد کن.";
+
+            return;
+
+        }
+
+        const area=
+            (a*b)/2;
+
+        result.innerHTML=
+            "مساحت: "+area+
+            "<br>قاعده: "+a+
+            "<br>ارتفاع: "+b;
+
+    }
+
+}
+
+
+/* UNIT */
+
+function convertUnit(){
+
+    const value=
+        parseFloat(
+            document
+            .getElementById(
+                "unitValue"
+            )
+            .value
+        );
+
+    const type=
+        document
+        .getElementById(
+            "unitType"
+        )
+        .value;
+
+    const result=
+        document
+        .getElementById(
+            "unitResult"
+        );
+
+    if(isNaN(value)){
+
+        result.textContent=
+            "لطفاً مقدار را وارد کن.";
+
+        return;
+
+    }
+
+    let converted;
+
+    switch(type){
+
+        case "km-m":
+            converted=value*1000;
+            break;
+
+        case "m-km":
+            converted=value/1000;
+            break;
+
+        case "m-cm":
+            converted=value*100;
+            break;
+
+        case "cm-m":
+            converted=value/100;
+            break;
+
+        case "kg-g":
+            converted=value*1000;
+            break;
+
+        case "g-kg":
+            converted=value/1000;
+            break;
+
+        case "l-ml":
+            converted=value*1000;
+            break;
+
+        case "ml-l":
+            converted=value/1000;
+            break;
+
+    }
+
+    result.textContent=
+        "نتیجه: "+converted;
+
+}
+
+
+/* STOPWATCH */
+
+let stopwatchSeconds=0;
+let stopwatchInterval=null;
+let stopwatchRunning=false;
+
+
+function formatStopwatch(seconds){
+
+    const h=
+        Math.floor(seconds/3600);
+
+    const m=
+        Math.floor(
+            (seconds%3600)/60
+        );
+
+    const s=
+        seconds%60;
+
+    return String(h).padStart(2,"0")
+        +":"
+        +String(m).padStart(2,"0")
+        +":"
+        +String(s).padStart(2,"0");
+
+}
+
+
+function updateStopwatch(){
+
+    document
+        .getElementById(
+            "stopwatch"
+        )
+        .textContent=
+        formatStopwatch(
+            stopwatchSeconds
+        );
+
+}
+
+
+function startStopwatch(){
+
+    if(stopwatchRunning)return;
+
+    stopwatchRunning=true;
+
+    stopwatchInterval=
+        setInterval(function(){
+
+            stopwatchSeconds++;
+
+            updateStopwatch();
+
+        },1000);
+
+}
+
+
+function pauseStopwatch(){
+
+    clearInterval(
+        stopwatchInterval
+    );
+
+    stopwatchRunning=false;
+
+}
+
+
+function resetStopwatch(){
+
+    clearInterval(
+        stopwatchInterval
+    );
+
+    stopwatchRunning=false;
+
+    stopwatchSeconds=0;
+
+    updateStopwatch();
+
+}
+
+
+/* AVERAGE */
+
+function calculateAverage(){
+
+    const input=
+        document
+        .getElementById(
+            "grades"
+        )
+        .value
+        .trim();
+
+    const result=
+        document
+        .getElementById(
+            "averageResult"
+        );
+
+    if(!input){
+
+        result.textContent=
+            "نمره‌ها را وارد کن.";
+
+        return;
+
+    }
+
+    const grades=
+        input
+        .split(/[,،\s]+/)
+        .map(Number)
+        .filter(
+            n=>!isNaN(n)
+        );
+
+    if(grades.length===0){
+
+        result.textContent=
+            "نمره معتبر پیدا نشد.";
+
+        return;
+
+    }
+
+    const invalid=
+        grades.some(
+            n=>n<0 || n>20
+        );
+
+    if(invalid){
+
+        result.textContent=
+            "نمره‌ها باید بین ۰ تا ۲۰ باشند.";
+
+        return;
+
+    }
+
+    const sum=
+        grades.reduce(
+            (a,b)=>a+b,
+            0
+        );
+
+    const average=
+        sum/grades.length;
+
+    result.innerHTML=
+        "تعداد نمره‌ها: "+
+        grades.length+
+        "<br>معدل: <strong>"+
+        average.toFixed(2)+
+        "</strong>";
+
+}
+
+
+/* LOAD */
+
+window.onload=function(){
+
+    const username=
+        localStorage.getItem(
+            "toolboxUsername"
+        );
+
+    if(username){
+
+        document
+            .getElementById(
+                "loginPage"
+            )
+            .style
+            .display="none";
+
+        document
+            .getElementById(
+                "homePage"
+            )
+            .classList
+            .add("active");
+
+        document
+            .getElementById(
+                "userNameRank"
+            )
+            .textContent=username;
+
+        document
+            .getElementById(
+                "userNameRank2"
+            )
+            .textContent=username;
+
+    }
+
+    updateStats();
+    updateGoal();
+    updateStopwatch();
+
+};
+
+</script>
+
+</body>
+</html>
